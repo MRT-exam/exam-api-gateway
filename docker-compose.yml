@@ -8,7 +8,9 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     ports:
-      - "8080:8080"
+      - "8181:8080"
+    expose:
+      - "8181"
     environment:
       SPRING_PROFILES_ACTIVE: docker
     networks:
