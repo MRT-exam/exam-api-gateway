@@ -17,10 +17,19 @@
 		<java.version>17</java.version>
 		<spring-cloud.version>2023.0.0</spring-cloud.version>
 	</properties>
+	<profiles>
+		<profile>
+			<id>docker</id>
+			<properties>
+				<active.profile>docker</active.profile>
+			</properties>
+		</profile>
+	</profiles>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-gateway</artifactId>
+			<version>4.0.3</version>
 		</dependency>
 
 		<dependency>
@@ -28,13 +37,6 @@
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 			<version>4.0.3</version>
 		</dependency>
-
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-netflix-eureka-server</artifactId>-->
-<!--			<version>4.0.3</version>-->
-<!--		</dependency>-->
-
 
 		<dependency>
 			<groupId>io.zipkin.reporter2</groupId>
