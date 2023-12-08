@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    container_name: api-gateway
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    networks:
+      - order-service-net
+
+
+networks:
+   order-service-net:
